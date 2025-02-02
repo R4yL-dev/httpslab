@@ -11,4 +11,5 @@ It use certbot to generate a certificate and nginx to serve the content over htt
 
 ```text
 DOMAIN=example.com
+EMAIL=exemple@mail.com
 ```
