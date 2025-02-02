@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# TODO:
+#   2. If no cert
+#       2.1. Process init nginx conf template (for certbot challange).
+#       2.2. Challange domain with certbot (onlycert).
+#       2.3. Delete init nginx conf template.
+#   3. Process https nginx conf template (for https).
+#   4. Reload nginx.
+
 CERT_PATH="/etc/letsencrypt/live/$DOMAIN/fullchain.pem"
 
 # Process nginx conf template
