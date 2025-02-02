@@ -26,11 +26,11 @@ RUN apt install -y \
 # Clean up
 RUN rm -fr /var/lib/apt/lists/*
 
-# Setup install certbot
-RUN python3 -m venv /opt/certbot
-RUN /opt/certbot/bin/pip install --upgrade pip
-RUN /opt/certbot/bin/pip install certbot certbot-nginx
-RUN ln -s /opt/certbot/bin/certbot /usr/local/bin/certbot
+# Install certbot
+RUN python3 -m venv /opt/certbot && \
+    /opt/certbot/bin/pip install --upgrade pip && \
+    /opt/certbot/bin/pip install certbot certbot-nginx && \
+    ln -s /opt/certbot/bin/certbot /usr/local/bin/certbot
 
 # Copy template file
 COPY confs/nginx/https.template.conf /etc/nginx/template/https.template.conf
