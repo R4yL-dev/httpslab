@@ -40,4 +40,5 @@ COPY scripts/init.sh /init.sh
 RUN chmod +x /init.sh
 
 EXPOSE 80
+EXPOSE 443
 
