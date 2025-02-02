@@ -1,0 +1,13 @@
+services:
+  nginx:
+    build:
+      context: ./containers/httpslab
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file:
+      - .env
+    entrypoint: ["/init.sh"]
+    restart: always
